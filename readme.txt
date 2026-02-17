@@ -34,6 +34,11 @@ KEY FEATURES
     -   Real-time alerts for student marks and performance reports.
     -   Direct communication channel for important school announcements.
 
+6.  **Smart Attendance Marking Interface**:
+    -   Checkbox-based selection for marking Present/Absent status.
+    -   Visual color coding: Green for Present, Red for Absent.
+    -   Batch submission via a 'Submit' button at the end (prevent accidental updates).
+
 TECH STACK
 ----------
 -   **Frontend**: React.js, Vite, React Router, Lucide Icons, Axios.

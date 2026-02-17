@@ -20,7 +20,7 @@ class StudentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Student
-        fields = ['id', 'roll_no', 'name', 'semester', 'attendance_percentage', 'average_marks', 'performance_remark', 'attendance_warning']
+        fields = ['id', 'roll_no', 'name', 'course', 'semester', 'attendance_percentage', 'average_marks', 'performance_remark', 'attendance_warning']
 
     def get_attendance_percentage(self, obj):
         total_days = obj.attendance_records.count()

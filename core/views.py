@@ -30,6 +30,7 @@ def generate_sample_data(request):
     first_names = ["Rahul", "Priya", "Amit", "Sneha", "Karan", "Anjali", "Rohan", "Meera", "Vikram", "Neha"]
     last_names = ["Shah", "Patel", "Sharma", "Verma", "Singh", "Gupta", "Kumar", "Joshi", "Mehta", "Reddy"]
     semesters = [1, 2, 3, 4, 5, 6, 7, 8]
+    courses = ["B.Tech", "BCA", "MCA", "M.Tech", "B.Sc", "M.Sc"]
     subjects = ["Maths", "Physics", "Chemistry", "Computer Science", "English"]
 
     created_students = []
@@ -38,12 +39,13 @@ def generate_sample_data(request):
         roll_no = str(random.randint(1000, 9999))
         name = f"{random.choice(first_names)} {random.choice(last_names)}"
         semester = random.choice(semesters)
+        course = random.choice(courses)
         
         # Avoid duplicate roll numbers
         if Student.objects.filter(roll_no=roll_no).exists():
             continue
 
-        student = Student.objects.create(roll_no=roll_no, name=name, semester=semester)
+        student = Student.objects.create(roll_no=roll_no, name=name, semester=semester, course=course)
         created_students.append(student.id)
 
         # Generate fake attendance (last 5 days)
